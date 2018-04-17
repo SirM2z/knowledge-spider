@@ -101,3 +101,9 @@ li {
   vertical-align: top; /* display:inline-block元素本身定义 vertical-align 属性可去掉元素垂直方向的多余空白*/  
 }
 ```
+
+> 参考
+>
+> - [inline-block 前世今生](https://github.com/paddingme/DailyReading/issues/5)
+> - [如何解决inline-block元素的空白间距(W3C PLUS)](https://www.w3cplus.com/css/fighting-the-space-between-inline-block-elements)
+> - [去除inline-block元素间间距的N种方法(张鑫旭)](http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/)
