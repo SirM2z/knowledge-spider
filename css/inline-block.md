@@ -2,13 +2,12 @@
 
 ## inline-block 兼容性
 
-兼容 > ie7，兼容（<ie8）写法:
+兼容 IE > 7，兼容（IE < 8）写法:
 
 ```css
 .father{
   display:inline-block; /* 现代浏览器 +IE6、7 inline 元素 */
-  *display:inline; /* IE6、7 block 元素 */
-  zoom:1;
+  zoom:1; *display:inline; /* IE6、7 block 元素 */
 }
 ```
 
@@ -23,7 +22,7 @@
 }
 ```
 
-> 解释：在IE下，display: inline-block只是触发了元素的layout。比如将display: inline-block设置到div上，只能保证这个div拥有块元素的特征（可以设置宽度，高度等），但还是会产生换行。接下来要设置display: inline，使其不产生换行。将display:inline-block;*display:inline;写在同一个样式上，inline-block属性是不会触发元素的layout的，因此我们还要额外加上 zoom:1来触发layout! 
+> 解释：在IE下，display: inline-block只是触发了元素的layout。比如将display: inline-block设置到div上，只能保证这个div拥有块元素的特征（可以设置宽度，高度等），但还是会产生换行。接下来要设置display: inline，使其不产生换行。将display:inline-block;*display:inline;写在同一个样式上，inline-block属性是不会触发元素的layout的，因此我们还要额外加上 zoom:1来触发layout
 
 ## inline-block 元素间间距 产生原因
 
@@ -64,8 +63,7 @@ li {
   letter-spacing: normal;
   word-spacing: normal;
   display:inline-block;
-  *display: inline;
-  zoom:1;
+  zoom: 1; *display: inline; /* IE < 8: 伪造 inline-block */
 }
 ```
 
@@ -74,8 +72,7 @@ li {
 ```css
 li {
   display:inline-block;
-  *display: inline;
-  zoom:1;
+  zoom: 1; *display: inline; /* IE < 8: 伪造 inline-block */
   word-spacing:0;
 }
 ul {
